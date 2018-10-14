@@ -5,12 +5,19 @@
     <link href="/public/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="scrollable">
-      <ul id="messages"></ul>
+    <div id="chat">
+      <div id="scrollable">
+        <ul id="messages"></ul>
+      </div>
+      <form id="chat-form" action="">
+        <input id="m" autocomplete="off" />
+      </form>
     </div>
-    <form action="">
-      <input id="m" autocomplete="off" />
-    </form>
+    <div id="login">
+      <form id="login-form" action="">
+        <input id="username" placeholder="Username..." autocomplete="off" />
+      </form>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="/public/client.js"></script>
