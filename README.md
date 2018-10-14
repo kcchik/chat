@@ -1,1 +1,2 @@
-# chat
+# Chat
+Chat with friends.
