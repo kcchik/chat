@@ -7,8 +7,7 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  id = "000" + Math.floor(Math.random() * 1000);
-  id = id.substr(id.length - 4);
+  id = "xX_hot_girl_69_Xx";
   socket.on('disconnect', function() {
     console.log('user disconnected');
   });
