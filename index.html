@@ -2,50 +2,7 @@
 <html>
   <head>
     <title>chat</title>
-    <style>
-      ::-webkit-scrollbar {
-        width: 0px;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      :focus {
-        outline: none;
-      }
-      body {
-        margin: auto;
-        width: 40em;
-        font-family: monospace;
-        line-height: 1.5em;
-      }
-      form {
-        margin: 0 auto;
-        width: 40em;
-        border: 2px solid #ddd;
-        border-radius: 5px;
-      }
-      form input {
-        border: 0;
-        padding: 10px;
-        width: 100%;
-      }
-      #messages {
-        list-style-type: none;
-        padding: 0;
-      }
-      #messages li {
-        padding: 5px 10px;
-      }
-      #messages li:nth-child(odd) {
-        background: #eee;
-        border-radius: 5px;
-      }
-      #scrollable {
-          height: 500px;
-          overflow-y: scroll;
-      }
-
-    </style>
+    <link href="/public/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id="scrollable">
@@ -56,19 +13,6 @@
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      $(function () {
-        var socket = io();
-        $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-        socket.on('chat message', function(msg){
-          $('#scrollable').animate({ scrollTop: $('#messages').height() });
-          $('#messages').append($('<li class="message">').text(msg));
-        });
-      });
-    </script>
+    <script src="/public/client.js"></script>
   </body>
 </html>
