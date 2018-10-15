@@ -5,6 +5,9 @@ $('#login-form').submit(function() {
   username = $('#username').val().trim();
   if (username != '') socket.emit('add', username);
   $('#username').val('');
+  $('#login').hide();
+  $('#chat').show();
+  $('#m').focus();
   return false;
 });
 

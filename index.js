@@ -11,7 +11,7 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket) {
   socket.on('disconnect', function() {
-    socket.broadcast.emit('left', username);
+    socket.broadcast.emit('left', socket.username);
   });
   socket.on('add', function(username) {
     socket.username = username;
