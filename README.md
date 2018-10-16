@@ -1,2 +1,3 @@
 # Chat
-Chat with friends.
+Chat with friends.  
+http://chat.kevinchik.me/
