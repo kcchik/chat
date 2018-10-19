@@ -13,7 +13,9 @@ let userCount = 0
 
 io.on('connection', (socket) => {
   socket.on('disconnect', () => {
-    userCount--
+    if (userCount != 0) {
+      userCount--
+    }
     socket.broadcast.emit('left', socket.username)
   })
   socket.on('add', (username) => {
@@ -21,8 +23,8 @@ io.on('connection', (socket) => {
     userCount++
     socket.broadcast.emit('joined', username)
     socket.emit('welcome', {
-      ...username,
-      ...userCount,
+      username: username,
+      userCount: userCount,
     })
   })
   socket.on('message', (msg) => {
