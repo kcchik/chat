@@ -33,5 +33,5 @@ io.on('connection', (socket) => {
 })
 
 http.listen(process.env.PORT || 3000, () => {
-  console.log("Starting server...")
+  console.log("Starting server on server " + (process.env.PORT || 3000))
 })
