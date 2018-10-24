@@ -12,7 +12,7 @@
 
 body {
   margin: auto;
-  width: 50em;
+  max-width: 50em;
   font-family: monospace;
   line-height: 1.5em;
 }
@@ -97,4 +97,11 @@ form input {
 .dark-mode .js-dark-mode {
   background: #444;
   color: #eee;
+}
+
+@media screen and (max-width: 768px) {
+
+  body {
+  }
+
 }
