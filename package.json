@@ -7,6 +7,7 @@
     "socket.io": "^2.1.1"
   },
   "scripts": {
-    "start": "sass scss/index.scss public/css/styles.css && node index.js"
+    "start": "sass --update scss:public/css && node index.js",
+    "watch": "sass --watch scss:public/css"
   }
 }
