@@ -3,11 +3,13 @@ let username
 
 $('#login-form').submit(() => {
   username = $('#login-username').val().trim()
-  if (username != '') socket.emit('add', username)
-  $('#login-usernmae').val('')
-  $('#login').hide()
-  $('#chat').show()
-  $('#chat-input').focus()
+  if (username) {
+    socket.emit('add', username)
+    $('#login-usernmae').val('')
+    $('#login').hide()
+    $('#chat').show()
+    $('#chat-input').focus()
+  }
   return false
 })
 

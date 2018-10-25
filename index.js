@@ -5,33 +5,11 @@ let io = require('socket.io')(http)
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html')
-})
+app.set('views', 'public/views')
+app.set('view engine', 'pug')
 
-let userCount = 0
+require('./config/routes')(app)
+require('./controllers/server')(io)
 
-io.on('connection', (socket) => {
-  socket.on('disconnect', () => {
-    if (socket.username) {
-      userCount--
-      socket.broadcast.emit('left', socket.username)
-    }
-  })
-  socket.on('add', (username) => {
-    socket.username = username
-    userCount++
-    socket.broadcast.emit('joined', username)
-    socket.emit('welcome', {
-      username: username,
-      userCount: userCount,
-    })
-  })
-  socket.on('message', (msg) => {
-    io.emit('message', msg)
-  })
-})
-
-http.listen(process.env.PORT || 3000, () => {
-  console.log("Starting server on server " + (process.env.PORT || 3000))
-})
+http.listen(process.env.PORT || 3000)
+console.log("Listening on port " + (process.env.PORT || 3000))
