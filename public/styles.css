@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0;
 }
 
 :focus {
@@ -15,11 +15,12 @@ body {
   max-width: 50em;
   font-family: monospace;
   line-height: 1.5em;
+  padding: 0 10px;
 }
 
 form {
   margin: 0 auto;
-  width: 50em;
+  max-width: 50em;
   border: 2px solid #ddd;
   border-radius: 5px;
 }
@@ -65,12 +66,6 @@ form input {
   overflow-y: scroll;
 }
 
-.chat-form {
-  position: fixed;
-  bottom: 10px;
-}
-
-
 .login {
   margin-top: 250px;
 }
@@ -100,8 +95,7 @@ form input {
 }
 
 @media screen and (max-width: 768px) {
-
-  body {
+  .chat {
+    padding-top: 45px;
   }
-
 }
