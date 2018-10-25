@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <button class="js-dark-mode" type="button">onion</button>
+    <div id="chat" class="chat">
+      <div id="chat-scroll" class="chat-scroll">
+        <ul id="chat-messages" class="chat-messages"></ul>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" class="chat-input" autocomplete="off" />
+      </form>
+    </div>
+    <div id="login" class="login">
+      <form id="login-form" class="login-form">
+        <input id="login-username" class="login-username" placeholder="Username..." autocomplete="off" />
+      </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/client.js"></script>
+    <script src="/dark.js"></script>
+  </body>
+</html>
