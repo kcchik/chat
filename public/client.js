@@ -1,18 +1,6 @@
 let socket = io()
 let username
 
-$('#login-form').submit(() => {
-  username = $('#login-username').val().trim()
-  if (username) {
-    socket.emit('add', username)
-    $('#login-usernmae').val('')
-    $('#login').hide()
-    $('#chat').show()
-    $('#chat-input').focus()
-  }
-  return false
-})
-
 $('#chat-form').submit(() => {
   msg = $('#chat-input').val().trim()
   if (msg != '') socket.emit('message', username + ': ' + msg)
