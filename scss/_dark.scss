@@ -1,0 +1,25 @@
+@import 'colors';
+
+.dark-mode {
+  color: $dark-fg;
+  background: $dark-bg-1;
+
+  .chat-messages li:nth-child(odd) {
+    background: $dark-bg-3;
+    border-radius: 5px;
+  }
+
+  form {
+    border: 2px solid $dark-bg-3;
+
+    input {
+      background: $dark-bg-2;
+      color: $dark-fg;
+    }
+  }
+
+  .js-dark-mode {
+    background: $dark-bg-3;
+    color: $dark-fg;
+  }
+}
