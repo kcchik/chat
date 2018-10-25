@@ -13,10 +13,10 @@ let userCount = 0
 
 io.on('connection', (socket) => {
   socket.on('disconnect', () => {
-    if (userCount != 0) {
+    if (socket.username) {
       userCount--
+      socket.broadcast.emit('left', socket.username)
     }
-    socket.broadcast.emit('left', socket.username)
   })
   socket.on('add', (username) => {
     socket.username = username
