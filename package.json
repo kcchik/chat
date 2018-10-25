@@ -4,7 +4,8 @@
   "description": "Chat with friends.",
   "dependencies": {
     "express": "^4.16.4",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.1.1",
+    "sass": "3.5.7"
   },
   "scripts": {
     "start": "sass --update scss:public/css && node index.js",
