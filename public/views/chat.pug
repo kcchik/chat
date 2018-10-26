@@ -5,8 +5,10 @@ button.js-dark-mode(type="button") onion
 
 #chat.chat
   #chat-scroll.chat-scroll
-    ul#chat-messages.chat-messages
+    ul#chat-messages.chat-messages(name=username)
+      li.chat-message Welcome #{username}!
   form#chat-form.chat-form
     input#chat-input.chat-input(autocomplete="off")
 
 include include/scripts.pug
+script(src="/chat.js")

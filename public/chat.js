@@ -1,5 +1,5 @@
 let socket = io()
-let username
+let username = $('#chat-messages').attr('name')
 
 $('#chat-form').submit(() => {
   msg = $('#chat-input').val().trim()

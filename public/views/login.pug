@@ -5,7 +5,7 @@ button.js-dark-mode(type="button") onion
 
 #login.login
   form#login-form.login-form(action="/chat" method="post")
-    input#login-username.login-username(placeholder="Username..." autocomplete="off")
+    input#login-username.login-username(type="text" name="username" placeholder="Username..." autocomplete="off")
 
 include include/scripts.pug
 script(src="/login.js")
