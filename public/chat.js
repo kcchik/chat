@@ -1,9 +1,11 @@
-let socket = io()
+let socket = io('/chat')
 let username = $('#chat-messages').attr('name')
 
 $('#chat-form').submit(() => {
   msg = $('#chat-input').val().trim()
-  if (msg != '') socket.emit('message', username + ': ' + msg)
+  if (msg != '') {
+    socket.emit('message', username + ': ' + msg)
+  }
   $('#chat-input').val('')
   return false
 })

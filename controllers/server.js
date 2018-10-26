@@ -2,11 +2,13 @@ module.exports = (io) => {
 
   let userCount = 0
 
-  io.on('connection', (socket) => {
+  io.of('/chat').on('connection', (socket) => {
     socket.on('disconnect', () => {
       if (socket.username) {
         userCount--
         socket.broadcast.emit('left', socket.username)
+      } else {
+        socket.broadcast.emit('left', 'User')
       }
     })
     socket.on('add', (username) => {
@@ -19,7 +21,7 @@ module.exports = (io) => {
       })
     })
     socket.on('message', (msg) => {
-      io.emit('message', msg)
+      io.of('/chat').emit('message', msg)
     })
   })
 }
