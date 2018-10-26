@@ -1,14 +1,11 @@
 doctype html
-head
-  meta(name="viewport" content="width=device-width, initial-scale=1.0")
-  title chat
-  link(href="/css/index.css" rel="stylesheet" type="text/css")
-  link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+include include/head.pug
+
 button.js-dark-mode(type="button") onion
+
 #login.login
-  form#login-form.login-form(action="/chat" method="get")
+  form#login-form.login-form(action="/chat" method="post")
     input#login-username.login-username(placeholder="Username..." autocomplete="off")
-script(src="/socket.io/socket.io.js")
-script(src="https://code.jquery.com/jquery-1.11.1.js")
+
+include include/scripts.pug
 script(src="/login.js")
-script(src="/dark.js")

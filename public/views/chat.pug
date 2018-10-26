@@ -1,0 +1,12 @@
+doctype html
+include include/head.pug
+
+button.js-dark-mode(type="button") onion
+
+#chat.chat
+  #chat-scroll.chat-scroll
+    ul#chat-messages.chat-messages
+  form#chat-form.chat-form
+    input#chat-input.chat-input(autocomplete="off")
+
+include include/scripts.pug

@@ -3,7 +3,7 @@ module.exports = (app) => {
     res.render('login')
   })
 
-  app.get('/chat', (req, res) => {
-    res.render('index')
+  app.post('/chat', (req, res) => {
+    res.render('chat')
   })
 }
