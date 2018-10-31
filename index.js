@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
 
+app.get('*', function(req, res) {
+  res.sendFile(__dirname + '/views/404.html')
+});
+
 let userCount = 0
 
 io.on('connection', (socket) => {
