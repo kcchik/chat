@@ -19,10 +19,11 @@ $('#chat-form').submit(() => {
 })
 
 socket.on('message', (msg) => {
+  $('#chat-messages').append($('<li class="chat-message">').text(msg))
+  $('#chat-scroll').queue('fx', [])
   $('#chat-scroll').animate({
     scrollTop: $('#chat-messages').height()
   })
-  $('#chat-messages').append($('<li class="chat-message">').text(msg))
 })
 
 socket.on('welcome', (data) => {
