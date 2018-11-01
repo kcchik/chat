@@ -1,6 +1,12 @@
 let socket = io()
 let username
 
+let focus;
+
+$(window).focus(() => {
+  document.title = `Chat`
+})
+
 $('#login-form').submit(() => {
   username = $('#login-username').val().trim()
   if (username != '') socket.emit('add', username)
@@ -31,7 +37,7 @@ socket.on('message', (data) => {
 })
 
 socket.on('message self', (data) => {
-  $('#chat-messages').append($('<li class="chat-message">').text(`${data.username} (you): ${data.msg}`))
+  $('#chat-messages').append($('<li class="chat-message">').text(`${data.username}: ${data.msg}`))
   $('#chat-scroll').queue('fx', [])
   $('#chat-scroll').animate({
     scrollTop: $('#chat-messages').height()
