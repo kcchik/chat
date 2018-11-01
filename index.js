@@ -31,11 +31,12 @@ io.on('connection', (socket) => {
       userCount: userCount,
     })
   })
-  socket.on('message', (msg) => {
-    io.emit('message', msg)
+  socket.on('message', (data) => {
+    socket.broadcast.emit('message', data)
+    socket.emit('message self', data)
   })
 })
 
 http.listen(process.env.PORT || 3000, () => {
-  console.log("Starting server on server " + (process.env.PORT || 3000))
+  console.log(`Starting server on port ${process.env.PORT || 3000}`)
 })
