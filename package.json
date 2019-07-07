@@ -3,7 +3,9 @@
   "description": "Server side rendered chat",
   "repository": "https://github.com/kcchik/chat",
   "license": "ISC",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
