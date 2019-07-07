@@ -1,0 +1,16 @@
+{
+    "globals": {
+        "activeUsers": "writable"
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 10
+    },
+    "rules": {
+        "semi": [2, "never"],
+        "no-console": "off",
+        "no-underscore-dangle": "off"
+    }
+}

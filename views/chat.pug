@@ -1,0 +1,17 @@
+doctype html
+include includes/head.pug
+.chat
+  table
+    tr
+      td
+        span.username Logged in as: #{username}
+      td.button
+        a.logout Log Out
+  .scroll
+    ul.messages
+  form.form
+    input(autocomplete='off')
+script(type='text/javascript').
+  const username = '#{username}'
+  const uid = '#{uid}'
+include includes/scripts.pug
