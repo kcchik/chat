@@ -110,3 +110,7 @@ table {
 .login input {
   width: 186px;
 }
+
+.login .error {
+  color: #f44;
+}

@@ -6,6 +6,7 @@ form.login(action='/login' method='post')
   input(name='username' type='text' placeholder='Username' autocomplete='off')
   br
   input(name='email' type='email' placeholder='Email' autocomplete='off')
+  span.error #{error}
   br
   table
     tr

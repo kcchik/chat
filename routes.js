@@ -1,4 +1,4 @@
-const userController = require('./manager')
+const manager = require('./manager')
 
 module.exports = (app) => {
   app.get('/', (req, res) => {
@@ -13,28 +13,32 @@ module.exports = (app) => {
     if (req.session.uid) {
       res.redirect('/')
     } else {
-      res.render('signup')
+      const { error } = req.session
+      req.session.error = null
+      res.render('signup', { error })
     }
   })
 
-  app.post('/signup', userController.signup)
+  app.post('/signup', manager.signup)
 
   app.get('/login', (req, res) => {
     if (req.session.uid) {
       res.redirect('/')
     } else {
-      res.render('login')
+      const { error } = req.session
+      req.session.error = null
+      res.render('login', { error })
     }
   })
 
-  app.post('/login', userController.login)
+  app.post('/login', manager.login)
 
   app.post('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/')
   })
 
-  app.get('/chat', userController.join)
+  app.get('/chat', manager.join)
 
   app.get('*', (req, res) => {
     res.render('404')
