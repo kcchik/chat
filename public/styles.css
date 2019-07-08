@@ -1,26 +1,26 @@
 body {
   font-family: monospace;
+  font-size: 12px;
   margin: 0;
 }
 
-.chat {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 600px;
-  margin: auto;
+input {
+  margin: 10px 0;
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 7px;
 }
 
-table {
-  padding: 10px 0;
-}
-
-td {
+button {
+  display: inline;
+  background: none;
+  border: none;
   padding: 0;
-}
-
-.button {
-  text-align: right;
+  font: inherit;
+  color: #49f;
+  border-bottom: 1px solid;
 }
 
 a {
@@ -30,41 +30,83 @@ a {
   border-bottom: 1px solid;
 }
 
-a:hover {
+button:hover, a:hover {
   color: #9cf;
   cursor: pointer;
 }
 
-.scroll {
+table {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.right {
+  text-align: right;
+}
+
+.side {
+  position: absolute;
+  margin-left: 20px;
+}
+
+.side .user:before {
+  content: '• ';
+  color: #49f;
+}
+
+.side .user {
+  margin-bottom: 5px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 600px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.chat table {
+  padding: 0;
+}
+
+.chat .scroll {
   overflow-y: scroll;
 }
 
-.messages {
+.chat .messages {
   list-style-type: none;
   padding-left: 0;
 }
 
-.message {
+.chat .message {
   margin-top: 2.5em;
 }
 
-.message-username {
+.chat .message-username {
   font-weight: bold;
   font-size: 12px;
   line-height: 0;
 }
 
-.message-content {
+.chat .message-content {
   line-height: 1em;
   font-size: 14px;
 }
 
-.form input {
-  width: 586px;
-  margin: 10px 0;
-  font-family: monospace;
+.chat form input {
+  width: 100%;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 7px;
+  box-sizing: border-box;
+}
+
+.login {
+  padding-top: 100px;
+  width: 200px;
+  margin: auto;
+}
+
+.login input {
+  width: 186px;
 }

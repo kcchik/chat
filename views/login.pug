@@ -1,9 +1,15 @@
 doctype html
 include includes/head.pug
-form(action='/login' method='post')
-  input.input(name='username' type='text' placeholder='Username' autocomplete='off')
+
+form.login(action='/login' method='post')
+  h2 chat
+  input(name='username' type='text' placeholder='Username' autocomplete='off')
   br
-  input.input(name='email' type='email' placeholder='Email' autocomplete='off')
+  input(name='email' type='email' placeholder='Email' autocomplete='off')
   br
-  button.button(type='submit') log in
-a(href='/') back
+  table
+    tr
+      td
+        button(type='submit') log in
+      td.right
+        a(href='/') back

@@ -5,14 +5,13 @@ const updateUsers = (io) => {
   const { ...sockets } = io.sockets.sockets
   const uids = Object.keys(sockets).map(key => sockets[key].uid).filter(uid => uid !== undefined)
   User.find({ _id: uids }, 'username', (e, users) => {
-    const clientUsers = users.map(user => ({
+    activeUsers = users.map(user => ({
       username: user.username,
       uid: user._id,
     }))
     io.emit('loadUsers', {
-      users: clientUsers,
+      users: activeUsers,
     })
-    activeUsers = clientUsers
   })
 }
 

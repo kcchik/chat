@@ -1,16 +1,22 @@
 doctype html
 include includes/head.pug
+
+.side
+  h2 Online
+  .users
+
 .chat
   table
     tr
       td
-        span.username Logged in as: #{username}
-      td.button
+        h2 #{username}
+      td.right
         a.logout Log Out
   .scroll
     ul.messages
-  form.form
+  form
     input(autocomplete='off')
+
 script(type='text/javascript').
   const username = '#{username}'
   const uid = '#{uid}'
