@@ -2,9 +2,7 @@
     "globals": {
         "activeUsers": "writable"
     },
-    "extends": [
-        "airbnb-base"
-    ],
+    "extends": "airbnb-base",
     "parserOptions": {
         "ecmaVersion": 10
     },
