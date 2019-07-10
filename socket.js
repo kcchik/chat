@@ -4,7 +4,7 @@ const User = require('./models/user')
 const updateUsers = (io) => {
   const { ...sockets } = io.sockets.sockets
   const uids = Object.keys(sockets).map(key => sockets[key].uid).filter(uid => uid !== undefined)
-  User.find({ _id: uids }, 'username', (e, users) => {
+  User.find({ _id: uids }, (e, users) => {
     activeUsers = users.map(user => ({
       username: user.username,
       uid: user._id,
