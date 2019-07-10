@@ -44,7 +44,7 @@ const scroll = () => {
 socket.on('message', (data) => {
   appendMsg(data.username, data.msg)
   scroll()
-  document.title = `new message from ${data.username}`
+  document.title = `${data.username} says...`
 })
 
 socket.on('messageSelf', (data) => {
