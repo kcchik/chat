@@ -1,8 +1,8 @@
 # Chat
 Server side rendered chat built using Express.js.
-* Socket.io: WebSocket library
-* Pug: Template engine
-* Mongoose: Database
+* Mongoose
+* Socket.io
+* Pug
 
 ### Requirements
 * Node.js
