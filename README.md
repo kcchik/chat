@@ -19,5 +19,5 @@ Install dependencies and start
 ```sh
 yarn
 
-npm start
+yarn start
 ```
