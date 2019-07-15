@@ -6,6 +6,7 @@ Server side rendered chat built using Express.js.
 
 ### Requirements
 * Node.js
+* Yarn
 * MongoDB
 
 ### Installing
