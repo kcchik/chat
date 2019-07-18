@@ -62,7 +62,7 @@ table {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 600px;
+  max-width: 600px;
   margin: auto;
   padding: 0 10px;
 }
@@ -113,4 +113,10 @@ table {
 
 .login .error {
   color: #f44;
+}
+
+@media screen and (max-width: 768px) {
+  .side {
+    display: none;
+  }
 }
