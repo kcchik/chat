@@ -1,5 +1,5 @@
 # Chat
-Server side rendered chat built using express.js, mongoose, and socket.io.
+Simple chatroom built using Express.js, Mongoose, and Socket.io.
 
 ### Requirements
 * Node.js
