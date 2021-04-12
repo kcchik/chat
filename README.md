@@ -1,5 +1,5 @@
 # Chat
-Simple chat room built using Express.js, Mongoose, and Socket.io.
+Instant messaging application built using Express.js, MongoDB, and Socket.io.
 
 ### Requirements
 * Node.js
